@@ -2,6 +2,9 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.ML" Version="1.5.5" />
   </ItemGroup>
@@ -9,5 +12,13 @@
     <ProjectReference Include="..\SaffronEngine\SaffronEngine.csproj" />
     <ProjectReference Include="..\SaffronFunctions\SaffronFunctions.fsproj" />
     <ProjectReference Include="..\SaffronML.Model\SaffronML.Model.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="lib\SaffronCpp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@ using SaffronML.Model;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 
 namespace BlogServer.Pages
 {
@@ -46,5 +47,11 @@ namespace BlogServer.Pages
             Sentiment = await response.Content.ReadAsStringAsync();
             StateHasChanged();
         }
+
+        //[DllImport("C:/Users/Mahmudul Hasan/Source/Repos/Pienteger/Saffron/BlogServer/lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
+        [DllImport("./lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
+        public static extern int AddNumbers(int a, int b);
+        [DllImport("./lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
+        public static extern int WhatsMyName(string a, string b);
     }
 }
