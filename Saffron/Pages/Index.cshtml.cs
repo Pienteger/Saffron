@@ -42,7 +42,7 @@ namespace Saffron.Pages
                 RequestUri = new Uri("https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/"),
                 Headers =
                 {
-                    { "x-rapidapi-key", "258d28d81dmshf86a1ae06a9a6fep12d0d3jsn428d6f5b8d3c" },
+                    { "x-rapidapi-key", "2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxc" },
                     { "x-rapidapi-host", "twinword-emotion-analysis-v1.p.rapidapi.com" },
                 },
                 Content = new FormUrlEncodedContent(new Dictionary<string, string>
