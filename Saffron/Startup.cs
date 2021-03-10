@@ -27,7 +27,8 @@ namespace Saffron
             services.AddRazorPages();
             services.AddSingleton<UtilityService>();
             services.AddPredictionEnginePool<ModelInput, ModelOutput>()
-    .FromFile(_modelPath);
+                .FromFile(_modelPath);
+            services.AddServerSideBlazor();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,6 +47,8 @@ namespace Saffron
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/Shared/_Host");
             });
         }
         public static string GetAbsolutePath(string relativePath)

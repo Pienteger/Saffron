@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogServer", "BlogServer\BlogServer.csproj", "{9B88E849-C88D-4115-AF84-6EB1E1655C72}"
-EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SaffronFunctions", "SaffronFunctions\SaffronFunctions.fsproj", "{CA20A435-1425-4530-ADAF-70E893F6D2A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaffronEngine", "SaffronEngine\SaffronEngine.csproj", "{CD1FDDBE-DFCC-4A41-B07D-F3D7A31483BC}"
@@ -13,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaffronML.Model", "SaffronM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SaffronCpp", "SaffronCpp\SaffronCpp.vcxproj", "{9F6CBD5C-9FE9-4505-AB60-3390AE6BA3E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saffron", "Saffron\Saffron.csproj", "{C3EDB548-D474-4CD5-ADC9-7103FCF7068F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saffron", "Saffron\Saffron.csproj", "{C3EDB548-D474-4CD5-ADC9-7103FCF7068F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,18 +23,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|x64.Build.0 = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Debug|x86.Build.0 = Debug|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|x64.ActiveCfg = Release|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|x64.Build.0 = Release|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|x86.ActiveCfg = Release|Any CPU
-		{9B88E849-C88D-4115-AF84-6EB1E1655C72}.Release|x86.Build.0 = Release|Any CPU
 		{CA20A435-1425-4530-ADAF-70E893F6D2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA20A435-1425-4530-ADAF-70E893F6D2A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA20A435-1425-4530-ADAF-70E893F6D2A8}.Debug|x64.ActiveCfg = Debug|Any CPU
