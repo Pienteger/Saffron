@@ -7,6 +7,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.ML;
 using SaffronML.Model;
 using System.IO;
+using Saffron.DataContex;
+using Microsoft.EntityFrameworkCore;
+using SaffronEngine.Identity;
+using Microsoft.AspNetCore.Http;
 
 namespace Saffron
 {
@@ -24,11 +28,23 @@ namespace Saffron
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddDbContext<SaffronDbContex>(options =>
+            options.UseSqlite(
+                    Configuration.GetConnectionString("SqliteConnection")));
+
+            services.AddDefaultIdentity<AppUser>(options => 
+            options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<SaffronDbContex>();
+
             services.AddRazorPages();
             services.AddSingleton<UtilityService>();
             services.AddPredictionEnginePool<ModelInput, ModelOutput>()
                 .FromFile(_modelPath);
             services.AddServerSideBlazor();
+            services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddSaffronServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

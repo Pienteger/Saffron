@@ -55,12 +55,5 @@ namespace Saffron.Pages
             response.EnsureSuccessStatusCode();
             Sentiment = await response.Content.ReadAsStringAsync();
         }
-
-        //[DllImport("C:/Users/Mahmudul Hasan/Source/Repos/Pienteger/Saffron/BlogServer/lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
-        [DllImport("./lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
-        public static extern int AddNumbers(int a, int b);
-        [DllImport("./lib/SaffronCpp.dll", CharSet = CharSet.Unicode)]
-        public static extern int WhatsMyName(string a, string b);
-
     }
 }
