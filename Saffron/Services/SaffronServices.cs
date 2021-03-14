@@ -11,7 +11,7 @@ namespace Saffron.Services
         public static IServiceCollection AddSaffronServices(
              this IServiceCollection services)
         {
-            services.AddSingleton<IMenuService,MenuService>();
+            services.AddScoped<IMenuService,MenuService>();
             return services;
         }
     }

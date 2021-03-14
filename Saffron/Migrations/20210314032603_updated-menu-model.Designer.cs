@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Saffron.DataContex;
 
 namespace Saffron.Migrations
 {
     [DbContext(typeof(SaffronDbContex))]
-    partial class SaffronDbContexModelSnapshot : ModelSnapshot
+    [Migration("20210314032603_updated-menu-model")]
+    partial class updatedmenumodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

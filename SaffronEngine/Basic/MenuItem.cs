@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace SaffronEngine.Basic
 {
@@ -11,5 +12,11 @@ namespace SaffronEngine.Basic
         [Required]
         public string Href { get; set; } = "#";
         public string Icon { get; set; }
+        public MenuType MenuType { get; set; }
+        public List<MenuItem> SubMenu { get; set; }
+    }
+    public enum MenuType
+    {
+
     }
 }

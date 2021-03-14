@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/fabric.component.css" />
     <link rel="stylesheet" href="./css/fabric.min.css" />
     <link rel="stylesheet" href="./css/fabriccore.css" />
-    <link rel="stylesheet" href="./css/taliwind.css" />
+    <link rel="stylesheet" href="./css/taliwind.min.css" />
     <link rel="stylesheet" href="./css/fluenticon.css" />
 
     <link rel="stylesheet" href="./css/app.css" />
@@ -24,10 +24,18 @@
 
 <body class="ms-Fabric">
     <nav class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
+        @foreach (var item in Menu.GetMenuItems())
+        {
+            <a href="@item.Href" class="active">
+                @if (!string.IsNullOrWhiteSpace(item.Icon))
+                {<span class="icon @item.Icon" />}
+                @item.DisplayText
+            </a>
+        }
+        @*<a href="#home" class="active">Home</a>
         <a href="/dashboard">Dashboard</a>
         <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a href="#about">About</a>*@
         <a href="javascript:void(0);" class="topicon" onclick="myFunction()">
             <span class="icon ic-navigation-24" id="navicon" />
         </a>
@@ -42,7 +50,7 @@
 
     <script src="./js/fabricjs.js"></script>
     <script src="./js/site.js"></script>
-
+    <script src="./js/npm.bundle.js"></script>
     <script>
         function myFunction() {
             var x = document.getElementById("myTopnav");
