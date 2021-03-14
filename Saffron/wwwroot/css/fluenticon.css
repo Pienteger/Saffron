@@ -33,10 +33,6 @@
   vertical-align: central;
 }
 
-.ic-copy-24:before {
-  content: "\f32c";
-}
-
 .ic-dismiss-24:before {
   content: "\f36a";
 }

@@ -5,10 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\**" />
     <Compile Remove="NpmJs\node_modules\**" />
+    <Content Remove="Areas\**" />
     <Content Remove="NpmJs\node_modules\**" />
+    <EmbeddedResource Remove="Areas\**" />
     <EmbeddedResource Remove="NpmJs\node_modules\**" />
+    <None Remove="Areas\**" />
     <None Remove="NpmJs\node_modules\**" />
+    <TypeScriptCompile Remove="Areas\**" />
     <TypeScriptCompile Remove="NpmJs\node_modules\**" />
   </ItemGroup>
   <ItemGroup>
@@ -49,14 +54,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Dashboard\Controllers\" />
-    <Folder Include="Areas\Dashboard\Data\" />
-    <Folder Include="Areas\Dashboard\Models\" />
-    <Folder Include="Areas\Dashboard\Views\" />
+    <Folder Include="wwwroot\emojies\" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="npm install" WorkingDirectory="NpmJs" />
-    <Exec Command="npm run buildnpm" WorkingDirectory="NpmJs" />
+    <!--<Exec Command="npm install" WorkingDirectory="NpmJs" />-->
+    <!--<Exec Command="npm run buildnpm" WorkingDirectory="NpmJs" />-->
     <Exec Command="npm run purge" WorkingDirectory="NpmJs" />
     <Exec Command="npm run buildtaliwind" WorkingDirectory="NpmJs" />
   </Target>

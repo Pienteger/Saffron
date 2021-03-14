@@ -5,13 +5,6 @@
  **/
 @charset 'UTF-8';
 
-@-webkit-keyframes ms-motion-fadeIn {
-
-    to {
-        opacity: 1
-    }
-}
-
 @keyframes ms-motion-fadeIn {
     from {
         opacity: 0
@@ -19,13 +12,6 @@
 
     to {
         opacity: 1
-    }
-}
-
-@-webkit-keyframes ms-motion-fadeOut {
-
-    to {
-        opacity: 0
     }
 }
 
@@ -39,13 +25,6 @@
     }
 }
 
-@-webkit-keyframes ms-motion-scaleDownIn {
-
-    to {
-        transform: scale3d(1,1,1)
-    }
-}
-
 @keyframes ms-motion-scaleDownIn {
     from {
         transform: scale3d(1.15,1.15,1)
@@ -53,13 +32,6 @@
 
     to {
         transform: scale3d(1,1,1)
-    }
-}
-
-@-webkit-keyframes ms-motion-scaleDownOut {
-
-    to {
-        transform: scale3d(.9,.9,1)
     }
 }
 
@@ -73,13 +45,6 @@
     }
 }
 
-@-webkit-keyframes ms-motion-slideLeftOut {
-
-    to {
-        transform: translate3d(-48px,0,0)
-    }
-}
-
 @keyframes ms-motion-slideLeftOut {
     from {
         transform: translate3d(0,0,0)
@@ -87,13 +52,6 @@
 
     to {
         transform: translate3d(-48px,0,0)
-    }
-}
-
-@-webkit-keyframes ms-motion-slideRightOut {
-
-    to {
-        transform: translate3d(48px,0,0)
     }
 }
 
@@ -107,24 +65,10 @@
     }
 }
 
-@-webkit-keyframes ms-motion-slideLeftIn {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-motion-slideLeftIn {
     from {
         transform: translate3d(48px,0,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-motion-slideRightIn {
 
     to {
         transform: translate3d(0,0,0)
@@ -141,13 +85,6 @@
     }
 }
 
-@-webkit-keyframes ms-motion-slideUpOut {
-
-    to {
-        transform: translate3d(0,-48px,0)
-    }
-}
-
 @keyframes ms-motion-slideUpOut {
     from {
         transform: translate3d(0,0,0)
@@ -155,13 +92,6 @@
 
     to {
         transform: translate3d(0,-48px,0)
-    }
-}
-
-@-webkit-keyframes ms-motion-slideDownOut {
-
-    to {
-        transform: translate3d(0,48px,0)
     }
 }
 
@@ -175,24 +105,10 @@
     }
 }
 
-@-webkit-keyframes ms-motion-slideUpIn {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-motion-slideUpIn {
     from {
         transform: translate3d(0,48px,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-motion-slideDownIn {
 
     to {
         transform: translate3d(0,0,0)
@@ -209,24 +125,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideRightIn10 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideRightIn10 {
     from {
         transform: translate3d(-10px,0,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideRightIn20 {
 
     to {
         transform: translate3d(0,0,0)
@@ -243,24 +145,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideRightIn40 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideRightIn40 {
     from {
         transform: translate3d(-40px,0,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideRightIn400 {
 
     to {
         transform: translate3d(0,0,0)
@@ -277,13 +165,6 @@
     }
 }
 
-@-webkit-keyframes ms-slideRightOut40 {
-
-    to {
-        transform: translate3d(40px,0,0)
-    }
-}
-
 @keyframes ms-slideRightOut40 {
     from {
         transform: translate3d(0,0,0)
@@ -291,13 +172,6 @@
 
     to {
         transform: translate3d(40px,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideRightOut400 {
-
-    to {
-        transform: translate3d(400px,0,0)
     }
 }
 
@@ -311,24 +185,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideLeftIn10 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideLeftIn10 {
     from {
         transform: translate3d(10px,0,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideLeftIn20 {
 
     to {
         transform: translate3d(0,0,0)
@@ -345,24 +205,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideLeftIn40 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideLeftIn40 {
     from {
         transform: translate3d(40px,0,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideLeftIn400 {
 
     to {
         transform: translate3d(0,0,0)
@@ -379,13 +225,6 @@
     }
 }
 
-@-webkit-keyframes ms-slideLeftOut40 {
-
-    to {
-        transform: translate3d(-40px,0,0)
-    }
-}
-
 @keyframes ms-slideLeftOut40 {
     from {
         transform: translate3d(0,0,0)
@@ -393,13 +232,6 @@
 
     to {
         transform: translate3d(-40px,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideLeftOut400 {
-
-    to {
-        transform: translate3d(-400px,0,0)
     }
 }
 
@@ -413,24 +245,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideUpIn10 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideUpIn10 {
     from {
         transform: translate3d(0,10px,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideUpIn20 {
 
     to {
         transform: translate3d(0,0,0)
@@ -447,24 +265,10 @@
     }
 }
 
-@-webkit-keyframes ms-slideDownIn10 {
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
 @keyframes ms-slideDownIn10 {
     from {
         transform: translate3d(0,-10px,0)
     }
-
-    to {
-        transform: translate3d(0,0,0)
-    }
-}
-
-@-webkit-keyframes ms-slideDownIn20 {
 
     to {
         transform: translate3d(0,0,0)
@@ -481,13 +285,6 @@
     }
 }
 
-@-webkit-keyframes ms-slideUpOut10 {
-
-    to {
-        transform: translate3d(0,-10px,0)
-    }
-}
-
 @keyframes ms-slideUpOut10 {
     from {
         transform: translate3d(0,0,0)
@@ -495,13 +292,6 @@
 
     to {
         transform: translate3d(0,-10px,0)
-    }
-}
-
-@-webkit-keyframes ms-slideUpOut20 {
-
-    to {
-        transform: translate3d(0,-20px,0)
     }
 }
 
@@ -515,13 +305,6 @@
     }
 }
 
-@-webkit-keyframes ms-slideDownOut10 {
-
-    to {
-        transform: translate3d(0,10px,0)
-    }
-}
-
 @keyframes ms-slideDownOut10 {
     from {
         transform: translate3d(0,0,0)
@@ -529,13 +312,6 @@
 
     to {
         transform: translate3d(0,10px,0)
-    }
-}
-
-@-webkit-keyframes ms-slideDownOut20 {
-
-    to {
-        transform: translate3d(0,20px,0)
     }
 }
 
@@ -549,13 +325,6 @@
     }
 }
 
-@-webkit-keyframes ms-scaleUp100 {
-
-    to {
-        transform: scale3d(1,1,1)
-    }
-}
-
 @keyframes ms-scaleUp100 {
     from {
         transform: scale3d(.98,.98,1)
@@ -563,13 +332,6 @@
 
     to {
         transform: scale3d(1,1,1)
-    }
-}
-
-@-webkit-keyframes ms-scaleUp103 {
-
-    to {
-        transform: scale3d(1.03,1.03,1)
     }
 }
 
@@ -583,13 +345,6 @@
     }
 }
 
-@-webkit-keyframes ms-scaleDown98 {
-
-    to {
-        transform: scale3d(.98,.98,1)
-    }
-}
-
 @keyframes ms-scaleDown98 {
     from {
         transform: scale3d(1,1,1)
@@ -600,13 +355,6 @@
     }
 }
 
-@-webkit-keyframes ms-scaleDown100 {
-
-    to {
-        transform: scale3d(1,1,1)
-    }
-}
-
 @keyframes ms-scaleDown100 {
     from {
         transform: scale3d(1.03,1.03,1)
@@ -614,13 +362,6 @@
 
     to {
         transform: scale3d(1,1,1)
-    }
-}
-
-@-webkit-keyframes ms-fadeIn {
-
-    to {
-        opacity: 1
     }
 }
 
@@ -636,13 +377,6 @@
     }
 }
 
-@-webkit-keyframes ms-fadeOut {
-
-    to {
-        opacity: 0
-    }
-}
-
 @keyframes ms-fadeOut {
     from {
         opacity: 1;
@@ -655,13 +389,6 @@
     }
 }
 
-@-webkit-keyframes ms-rotate90 {
-
-    to {
-        transform: rotateZ(90deg)
-    }
-}
-
 @keyframes ms-rotate90 {
     from {
         transform: rotateZ(0)
@@ -669,13 +396,6 @@
 
     to {
         transform: rotateZ(90deg)
-    }
-}
-
-@-webkit-keyframes ms-rotateN90 {
-
-    to {
-        transform: rotateZ(0)
     }
 }
 
@@ -1018,6 +738,70 @@
     font-style: normal
 }
 
+.ms-Grid {
+    box-sizing: border-box;
+    zoom: 1;
+    padding: 0 8px
+}
+
+    .ms-Grid::after, .ms-Grid::before {
+        display: table;
+        content: '';
+        line-height: 0
+    }
+
+    .ms-Grid::after {
+        clear: both
+    }
+
+.ms-Grid-row {
+    margin: 0 -8px;
+    box-sizing: border-box;
+    zoom: 1
+}
+
+    .ms-Grid-row::after, .ms-Grid-row::before {
+        display: table;
+        content: '';
+        line-height: 0
+    }
+
+    .ms-Grid-row::after {
+        clear: both
+    }
+
+.ms-Grid-col {
+    position: relative;
+    min-height: 1px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box
+}
+
+[dir=ltr] .ms-Grid-col {
+    float: left
+}
+
+.ms-Grid-col .ms-Grid {
+    padding: 0
+}
+
+.ms-sm1 {
+    width: 8.333333333333332%
+}
+
+@media (min-width:480px) {
+    .ms-md3 {
+        width: 25%
+    }
+}
+
+@media (min-width:640px) {
+    .ms-lg3 {
+        width: 25%
+    }
+}
+
 .ms-Fabric {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -1025,7 +809,3 @@
     font-family: 'Segoe UI','Segoe UI Web (West European)',-apple-system,BlinkMacSystemFont,Roboto,'Helvetica Neue',sans-serif;
     font-size: 20px
 }
-
-    .ms-Fabric button, .ms-Fabric input {
-        font-family: inherit
-    }

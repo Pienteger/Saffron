@@ -1,6 +1,8 @@
-﻿using System;
+﻿using SaffronEngine.Basic;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace Saffron.Services
@@ -34,5 +36,19 @@ namespace Saffron.Services
         /// Want to load multiple css files? Try <c>CustomCssList</c> instead.
         /// </summary>
         public string CustomCss { get; set; }
+        public static string GetAbsolutePath(string relativePath)
+        {
+            FileInfo _dataRoot = new(typeof(Program).Assembly.Location);
+            string assemblyFolderPath = _dataRoot.Directory.FullName;
+
+            string fullPath = Path.Combine(assemblyFolderPath, relativePath);
+            return fullPath;
+        }
+        public static List<Emoji> GetEmojies()
+        {
+            var emojieJsonPath = GetAbsolutePath("LocalData/emojies.json");
+            string emojieJson = File.ReadAllText(emojieJsonPath);
+            return JsonConvert.DeserializeObject<List<Emoji>>(emojieJson);
+        }
     }
 }
