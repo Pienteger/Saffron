@@ -34,7 +34,7 @@ namespace Saffron
             options.UseSqlite(
                     Configuration.GetConnectionString("SqliteConnection")));
 
-            services.AddDefaultIdentity<AppUser>(options => 
+            services.AddDefaultIdentity<AppUser>(options =>
             options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<SaffronDbContex>();
 
@@ -65,6 +65,9 @@ namespace Saffron
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/Shared/_Host");
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/_Host");
             });
         }
         public static string GetAbsolutePath(string relativePath)
