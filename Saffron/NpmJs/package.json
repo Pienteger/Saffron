@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack ./src/index.js --output-path ../wwwroot/js --output-filename npm.bundle.js",
-    "buildtaliwind": "npx tailwindcss-cli@latest build ./tlcss.css -o ../wwwroot/css/taliwind.min.css"
+    "buildnpm": "webpack ./src/index.js --output-path ../wwwroot/js --output-filename npm.bundle.js",
+    "buildtaliwind": "npx tailwindcss-cli build ./tlcss.css -o ../wwwroot/css/taliwind.min.css",
+    "purge": "npx purgecss --css ../wwwroot/raw/*.css --content src/index.html ../Pages/**/*.cshtml -o ../wwwroot/css/"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,8 @@
   "dependencies": {
     "clipboard": "^2.0.8",
     "igniteui-webcomponents-core": "^1.2.2",
-    "igniteui-webcomponents-gauges": "^1.2.2"
+    "igniteui-webcomponents-gauges": "^1.2.2",
+    "purgecss": "^4.0.2",
+    "tailwindcss-cli": "^0.1.2"
   }
 }
