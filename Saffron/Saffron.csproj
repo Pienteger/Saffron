@@ -57,10 +57,9 @@
     <Folder Include="wwwroot\emojies\" />
   </ItemGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <!--<Exec Command="npm install" WorkingDirectory="NpmJs" />-->
-    <!--<Exec Command="npm run buildnpm" WorkingDirectory="NpmJs" />-->
+    <Exec Command="npm install" WorkingDirectory="NpmJs" />
+    <Exec Command="npm run buildnpm" WorkingDirectory="NpmJs" />
     <Exec Command="npm run purge" WorkingDirectory="NpmJs" />
-    <Exec Command="npm run buildtaliwind" WorkingDirectory="NpmJs" />
   </Target>
 
 </Project>

@@ -24,23 +24,9 @@
             color: black;
         }
 
-        .topnav a.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-    .topnav .topicon {
-        display: none;
-    }
-
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {
         display: none;
-    }
-
-    .topnav a.topicon {
-        float: right;
-        display: block;
     }
 }
 
@@ -48,12 +34,6 @@
     .topnav.responsive {
         position: relative;
     }
-
-        .topnav.responsive .topicon {
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
 
         .topnav.responsive a {
             float: none;

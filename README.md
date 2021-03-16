@@ -2,12 +2,6 @@
 
 An open-source high-performance blog engine intended to closely work with machine learning and easily customizable layout.
 
-## Using frameworks
-
-- [Fabric JS](https://developer.microsoft.com/en-us/fabric-js)
-- [Fluent Icons](https://github.com/microsoft/fluentui-system-icons/blob/master/icons.md)
-- [Taliwind](https://tailwindcss.com/)
-
 ## SVG Providers
 
 - [unDraw](https://undraw.co)

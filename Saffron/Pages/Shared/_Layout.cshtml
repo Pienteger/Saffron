@@ -6,12 +6,7 @@
     <meta charset="utf-8" />
     <title>@util.Title - Blog</title>
     <base href="~" />
-    <link rel="stylesheet" href="./css/fabric.component.css" />
-    <link rel="stylesheet" href="./css/fabric.min.css" />
-    <link rel="stylesheet" href="./css/fabriccore.css" />
-    <link rel="stylesheet" href="./css/taliwind.min.css" />
     <link rel="stylesheet" href="./css/fluenticon.css" />
-
     <link rel="stylesheet" href="./css/app.css" />
     <link rel="stylesheet" href="@util.CustomCss" />
     <link rel="icon" href="@util.Icon" />
@@ -23,22 +18,19 @@
 </head>
 
 <body class="ms-Fabric">
-    <nav class="topnav" id="myTopnav">
-        @foreach (var item in Menu.GetMenuItems())
-        {
-            <a href="@item.Href" class="active">
-                @if (!string.IsNullOrWhiteSpace(item.Icon))
-                {<span class="icon @item.Icon" />}
-                @item.DisplayText
-            </a>
-        }
-        @*<a href="#home" class="active">Home</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>*@
-        <a href="javascript:void(0);" class="topicon" onclick="myFunction()">
-            <span class="icon ic-navigation-24" id="navicon" />
-        </a>
+
+    <nav class="ms-bgColor-white">
+        <div class="ms-Grid-row p-1 lg:px-10">
+            <div class="ms-Grid-col ms-sm5 ms-md1 ms-lg1 p-2">
+                <img src="./img/logo.svg"/>
+            </div>
+            <div class="ms-Grid-col ms-sm10 p-2">
+
+            </div>
+            <div class="ms-Grid-col ms-sm1 p-2 ">
+                <span class="icon ic-navigation-24 align-self-center" />
+            </div>
+        </div>
     </nav>
 
     <div> @RenderBody()</div>
