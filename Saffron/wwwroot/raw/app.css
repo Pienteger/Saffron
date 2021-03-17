@@ -3,6 +3,10 @@
     background-repeat: repeat;
 }
 */
+body {
+    margin: 0px;
+}
+
 
 .topnav {
     overflow: hidden;

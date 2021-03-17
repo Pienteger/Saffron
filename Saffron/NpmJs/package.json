@@ -4,20 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "buildnpm": "webpack ./src/index.js --output-path ../wwwroot/js --output-filename npm.bundle.js",
+    "buildnpm": "npx webpack ./src/index.js --output-path ../wwwroot/js --output-filename npm.bundle.js",
     "purge": "npx purgecss --css ../wwwroot/raw/*.css --content src/index.html ../Pages/**/*.cshtml -o ../wwwroot/css/"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "webpack": "^5.25.0",
+    "webpack": "^5.26.2",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "clipboard": "^2.0.8",
-    "igniteui-webcomponents-core": "^1.2.2",
-    "igniteui-webcomponents-gauges": "^1.2.2",
     "purgecss": "^4.0.2"
   }
 }
