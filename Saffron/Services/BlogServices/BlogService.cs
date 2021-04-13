@@ -31,5 +31,15 @@ namespace Saffron.Services.BlogServices
             return context.BlogPosts.OrderByDescending(x => x.Created)
                 .Skip(startRange).Take(count).ToList();
         }
+
+        public IEnumerable<PostCategory> GetCategories()
+        {
+            return context.PostCategories.ToList();
+        }
+
+        public IEnumerable<PostTag> GetTags()
+        {
+            return context.PostTags.ToList();
+        }
     }
 }

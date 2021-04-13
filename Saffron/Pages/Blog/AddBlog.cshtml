@@ -1,5 +1,7 @@
 ﻿@page
 @using Syncfusion.EJ2
+
+@inject IBlogService blogService
 @model AddBlogModel
 @{
     utilityService.HeaderJS = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";
@@ -18,11 +20,13 @@
                                               removeUrl="@navigationService.IoRemoveFileApi"
                                               allowedTypes="@(new[]{".jpg",".jpeg","gif",".png"})"
                                               path="/Files/Uploads/" />
-        <e-content-template>
-
-        </e-content-template>
     </ejs-richtexteditor>
-
+    <ejs-multiselect id="BlogTag" dataSource="@blogService.GetTags()" placeholder="Tag" ejs-for="Blog.PostTags" mode="Box"></ejs-multiselect>
+    <ejs-multiselect id="BlogCategory" dataSource="@blogService.GetCategories()" placeholder="Category" ejs-for="Blog.Categories" mode="Box"></ejs-multiselect>
+    <input id="upload" hidden asp-for="Blog.FeaturedImage"/>
+    <ejs-uploader id="uploadFiles" dropArea="#droparea" allowedExtensions=".jpg,.png,.jpeg"
+        u="onFileSelect"
+        asyncSettings="@Model.AsyncSettings" autoUpload="false"></ejs-uploader>
     <button type="submit">Add New Blog</button>
 </form>
 
@@ -33,5 +37,14 @@
 
 
 @section Scripts {
+    <script>
+        function onFileSelect(args) {
+            var inputElement = document.getElementById('upload');
+            inputElement.value ="/Files/Uploads/" +  args.filesData[0].name;
+            console.log(args.filesData[0].name);
+        }
+    </script>
+
     <ejs-scripts></ejs-scripts>
+
 }

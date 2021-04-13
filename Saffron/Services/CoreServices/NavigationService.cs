@@ -19,6 +19,7 @@ namespace Saffron.Services.CoreServices
         #endregion
         #region Blog
 
+        public string BlogPage => "/Blog";
         public string AddNewBlog => "/Blog/AddBlog";
 
         #endregion

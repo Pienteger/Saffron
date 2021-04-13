@@ -11,5 +11,7 @@ namespace Saffron.Services.BlogServices
         void Add(BlogPost blog);
         BlogPost GetPost(string slug);
         IEnumerable<BlogPost> GetPosts(int startRange, int count = 10);
+        IEnumerable<PostCategory> GetCategories();
+        IEnumerable<PostTag> GetTags();
     }
 }

@@ -22,6 +22,8 @@ namespace SaffronEngine.Blog
         [Required]
         public string Body { get; set; }
 
+        public string FeaturedImage { get; set; }
+
         public DateTime Created { get; set; } = DateTime.Today;
         public DateTime Modified { get; set; } = DateTime.Today;
         public List<PostTag> PostTags { get; set; }

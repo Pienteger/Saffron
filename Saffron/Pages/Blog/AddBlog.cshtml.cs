@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Net.Http.Headers;
 using Saffron.Services.CoreServices;
 using Microsoft.AspNetCore.Hosting;
+using Syncfusion.EJ2.Inputs;
 using Syncfusion.EJ2.RichTextEditor;
 
 namespace Saffron.Pages.Blog
@@ -31,7 +32,7 @@ namespace Saffron.Pages.Blog
         public BlogPost Blog { get; set; }
         [BindProperty] public string[] RichToolBar { get; set; }
         [BindProperty] public object AjaxSettings { get; set; }
-        [BindProperty] public  RichTextEditor RichTextEditor { get; set; }
+        [BindProperty] public UploaderAsyncSettings AsyncSettings { get; set; }
         public void OnGet()
         {
             Blog = new();
@@ -52,6 +53,8 @@ namespace Saffron.Pages.Blog
                 uploadUrl = navigation.IoUploadApi,
                 downloadUrl = navigation.IoDownloadApi
             };
+            AsyncSettings = new UploaderAsyncSettings { SaveUrl = navigation.IoSaveFileApi, 
+                RemoveUrl = navigation.IoRemoveFileApi };
         }
 
 
