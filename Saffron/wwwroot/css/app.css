@@ -15,20 +15,6 @@ body {
         top: 0;
         position: fixed;
     }
-
-footer {
-    bottom: 0;
-    left: 0;
-    background-color: #11100f;
-    margin-top: 80px;
-    width: 100%;
-    padding: 40px;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #faf9f8;
-    box-sizing: border-box;
-}
  
 #go-to-top {
     position: fixed;

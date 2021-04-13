@@ -1,0 +1,18 @@
+﻿@page "/blog/{slug}"
+@model BlogPostModel
+@{
+
+}
+
+@if(Model.HasPost)
+{
+    <p>@Model.HasPost</p>
+    <h1>@Model.Blog.Title</h1>
+    <div>
+        @Html.Raw(@Model.Blog.Body)
+    </div>
+}
+else
+{
+    <p>No Post</p>
+}

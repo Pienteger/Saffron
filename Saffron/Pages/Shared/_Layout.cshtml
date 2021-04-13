@@ -1,84 +1,77 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A high-performance blog engine that comes with ML and mathematical functionalities by default.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-
-    <title>@util.Title - Blog</title>
-    <base href="~" />
-
-
-    <!-- Add to homescreen for Chrome on Android -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="Cache-control" content="public">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="./img/writing.png">
-
-    <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="./img/writing.png">
+    <meta name="msapplication-TileColor" content="@utilityService.ApplicationTitleColor">
+    <meta name="theme-color" content="@utilityService.ThemeColor">
+    <meta name="apple-mobile-web-app-status-bar-style" content="@utilityService.SafariIconColor">
+    <meta name="apple-mobile-web-app-title" content="@utilityService.WebsiteName">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" href="./img/writing.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+    <base href="~" />
+    <title>@utilityService.Title @(!string.IsNullOrWhiteSpace(utilityService.SubTitle)?" - " + utilityService.SubTitle:"")</title>
 
-    <link rel="shortcut icon" href="./img/writing.png">
+    <meta name="description" content="@utilityService.MetaDescription">
+    <link rel="canonical" href="@utilityService.CurrentUri">
+    <meta property="og:title" id="ogTitle" content="@utilityService.Title">
+    <meta property="og:description" id="ogDesc" content="@utilityService.MetaDescription">
+    <meta property="og:url" id="ogUrl" content="@utilityService.CurrentUri">
+    <meta property="article:modified_time" id="modifiedTime" content="@utilityService.ModifiedTime">
+    <meta property="og:image" id="ogImage" content="@utilityService.FeatureImage">
 
+    <meta property="og:locale" content="bn-BD">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="@utilityService.WebsiteName">
+    <meta property="article:publisher" content="@utilityService.Publisher">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="840">
+    <meta name="twitter:creator" content="@utilityService.TwitterHandle">
+
+    <link rel="msapplication-TileImage" type="image/png" size="150x150" href="@utilityService.Icon150">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="@utilityService.AppleIcon">
+    <link rel="icon" type="image/png" sizes="32x32" href="@utilityService.Icon32">
+    <link rel="icon" type="image/png" sizes="16x16" href="@utilityService.Icon16">
+    <link rel="icon" type="image/png" sizes="192x192" href="@utilityService.Icon192">
+    <link rel="mask-icon" type="image/png" href="@utilityService.SafariIcon" color="@utilityService.SafariIconColor">
+    <link rel="apple-touch-icon-precomposed" type="image/png" href="@utilityService.AppleIcon">
+
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
     <link rel="stylesheet" href="./css/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/fluenticon.css" />
     <link rel="stylesheet" href="./css/app.css" />
-    <link rel="stylesheet" href="@util.CustomCss" />
-    <link rel="icon" href="@util.Icon" />
 
-    @foreach (var item in util.CustomCssList)
+    <link rel="stylesheet" href="@utilityService.CustomCss" />
+    @foreach (var css in utilityService.CustomCssList)
     {
-        <link rel="icon" href="@item" />
+        <link rel="stylesheet" href="@css" />
+    }
+
+    <script src="@utilityService.HeaderJS"></script>
+    @foreach (var js in utilityService.HeaderJsList)
+    {
+        <script src="@js"></script>
     }
 </head>
 <body>
-    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-        <main class="mdl-layout__content">
 
-
-            <div> @RenderBody()</div>
-
-
-            <footer>
-                @*<div class="mdl-mini-footer--left-section">
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
-                        <span class="visuallyhidden">Twitter</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
-                        <span class="visuallyhidden">Facebook</span>
-                    </button>
-                    <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
-                        <span class="visuallyhidden">Google Plus</span>
-                    </button>
-                    <h1>Hello</h1>
-                </div>
-                <div class="mdl-mini-footer--right-section">
-                    <button class="mdl-mini-footer--social-btn social-btn__share">
-                        <i class="material-icons" role="presentation">share</i>
-                        <span class="visuallyhidden">share</span>
-                    </button>
-                </div>*@
-                <h1>Hello</h1>
-            </footer>
-        </main>
-        <div class="mdl-layout__obfuscator"></div>
-    </div>
+    <a href="@navigationService.Home">Home</a>
+    <partial name="_LoginPartial" />
+    @RenderBody()
 
     <button id="go-to-top"
             class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-color--accent mdl-color-text--white"
             onclick="goToTopFunction()">
         <i class="icon ic-arrow-up-28"></i>
     </button>
-    @await RenderSectionAsync("Scripts", required: false)
+
 
     <script src="./js/material.min.js"></script>
     <script src="./js/npm.bundle.js"></script>
@@ -97,6 +90,7 @@
         }
     </script>
 
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>

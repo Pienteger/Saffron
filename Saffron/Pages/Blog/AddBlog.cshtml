@@ -1,0 +1,37 @@
+﻿@page
+@using Syncfusion.EJ2
+@model AddBlogModel
+@{
+    utilityService.HeaderJS = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";
+    utilityService.CustomCss = "https://cdn.syncfusion.com/ej2/fabric.css";
+}
+
+<form asp-for="@Model.Blog" method="post">
+    <label asp-for="Blog.Title"></label>
+    <input asp-for="Blog.Title" placeholder="Title" />
+    <hr />
+    <label asp-for="Blog.Body"></label>
+    <ejs-richtexteditor id="blogBodyEditor" showCharCount="true" ejs-for="Blog.Body">
+        <e-richtexteditor-toolbarsettings items="@Model.RichToolBar" />
+        <e-richtexteditor-filemanagersettings enable="true" ajaxSettings="@Model.AjaxSettings" />
+        <e-richtexteditor-insertimagesettings saveUrl="@navigationService.IoSaveFileApi"
+                                              removeUrl="@navigationService.IoRemoveFileApi"
+                                              allowedTypes="@(new[]{".jpg",".jpeg","gif",".png"})"
+                                              path="/Files/Uploads/" />
+        <e-content-template>
+
+        </e-content-template>
+    </ejs-richtexteditor>
+
+    <button type="submit">Add New Blog</button>
+</form>
+
+
+
+
+
+
+
+@section Scripts {
+    <ejs-scripts></ejs-scripts>
+}
