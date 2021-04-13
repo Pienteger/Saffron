@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using SaffronEngine.Blog;
 using Saffron.DataContext;
 
@@ -15,19 +16,20 @@ namespace Saffron.Services.BlogServices
         }
         public void Add(BlogPost blog)
         {
-            blog.Slug = string.Join('-', blog.Title.Split(' '));
+            blog.Slug = string.Join('-', blog.Title.Split(' ')).ToLower();
             context.BlogPosts.Add(blog);
             context.SaveChanges();
         }
 
         public BlogPost GetPost(string slug)
         {
-           return context.BlogPosts.FirstOrDefault(x => x.Slug == slug);
+            return context.BlogPosts.FirstOrDefault(x => EF.Functions.Like(x.Slug, slug));
         }
 
-        public IEnumerable<BlogPost> GetPosts(int startRange, int count= 10)
+        public IEnumerable<BlogPost> GetPosts(int startRange, int count = 10)
         {
-            return context.BlogPosts.Skip(startRange).Take(count).ToList();
+            return context.BlogPosts.OrderByDescending(x => x.Created)
+                .Skip(startRange).Take(count).ToList();
         }
     }
 }

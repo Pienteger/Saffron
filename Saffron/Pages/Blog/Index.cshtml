@@ -1,6 +1,10 @@
-﻿@page
+﻿@page "/{startPage&itemCount&tag&category}"
 @model IndexModel
 @{
 }
 <p>Ahlan Wa Sahlan</p>
-<p>@Model.Page</p>
+@foreach (var item in Model.BlogPosts)
+{
+    <h1><a href="/blog/@item.Slug">@item.Title</a></h1>
+    <hr/>
+}
