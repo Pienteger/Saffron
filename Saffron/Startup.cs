@@ -34,7 +34,6 @@ namespace Saffron
             #region Basic
 
             services.AddRazorPages();
-            services.AddServerSideBlazor();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddCors(options =>
@@ -97,8 +96,6 @@ namespace Saffron
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/Shared/_Host");
                 endpoints.MapControllerRoute(
                     name: "areas",
                     pattern: "{area:exists}/_Host");

@@ -8,27 +8,33 @@
     utilityService.CustomCss = "https://cdn.syncfusion.com/ej2/material.css";
 }
 
-<form asp-for="@Model.Blog" method="post">
-    <label asp-for="Blog.Title"></label>
-    <input asp-for="Blog.Title" placeholder="Title" />
-    <hr />
-    <label asp-for="Blog.Body"></label>
-    <ejs-richtexteditor id="blogBodyEditor" showCharCount="true" ejs-for="Blog.Body">
-        <e-richtexteditor-toolbarsettings items="@Model.RichToolBar" />
-        <e-richtexteditor-filemanagersettings enable="true" ajaxSettings="@Model.AjaxSettings" />
-        <e-richtexteditor-insertimagesettings saveUrl="@navigationService.IoSaveFileApi"
-                                              removeUrl="@navigationService.IoRemoveFileApi"
-                                              allowedTypes="@(new[]{".jpg",".jpeg","gif",".png"})"
-                                              path="/Files/Uploads/" />
-    </ejs-richtexteditor>
-    <ejs-multiselect id="BlogTag" dataSource="@blogService.GetTags()" placeholder="Tag" ejs-for="Blog.PostTags" mode="Box"></ejs-multiselect>
-    <ejs-multiselect id="BlogCategory" dataSource="@blogService.GetCategories()" placeholder="Category" ejs-for="Blog.Categories" mode="Box"></ejs-multiselect>
-    <input id="upload" hidden asp-for="Blog.FeaturedImage"/>
-    <ejs-uploader id="uploadFiles" dropArea="#droparea" allowedExtensions=".jpg,.png,.jpeg"
-        u="onFileSelect"
-        asyncSettings="@Model.AsyncSettings" autoUpload="false"></ejs-uploader>
-    <button type="submit">Add New Blog</button>
-</form>
+<div style="margin: 5rem; padding: 5rem;">
+    <form asp-for="@Model.Blog" method="post">
+        
+        <div>
+            <label asp-for="Blog.Title"></label>
+            <input type="text" asp-for="Blog.Title">
+        </div>
+
+        <hr/>
+        <label asp-for="Blog.Body"></label>
+        <ejs-richtexteditor id="blogBodyEditor" showCharCount="true" ejs-for="Blog.Body">
+            <e-richtexteditor-toolbarsettings items="@Model.RichToolBar"/>
+            <e-richtexteditor-filemanagersettings enable="true" ajaxSettings="@Model.AjaxSettings"/>
+            <e-richtexteditor-insertimagesettings saveUrl="@navigationService.IoSaveFileApi"
+                                                  removeUrl="@navigationService.IoRemoveFileApi"
+                                                  allowedTypes="@(new[] {".jpg", ".jpeg", "gif", ".png"})"
+                                                  path="/Files/Uploads/"/>
+        </ejs-richtexteditor>
+        <ejs-multiselect id="BlogTag" dataSource="@blogService.GetTags()" placeholder="Tag" ejs-for="Blog.PostTags" mode="Box"></ejs-multiselect>
+        <ejs-multiselect id="BlogCategory" dataSource="@blogService.GetCategories()" placeholder="Category" ejs-for="Blog.Categories" mode="Box"></ejs-multiselect>
+        <input id="upload" hidden asp-for="Blog.FeaturedImage"/>
+        <ejs-uploader id="uploadFiles" dropArea="#droparea" allowedExtensions=".jpg,.png,.jpeg"
+                      u="onFileSelect"
+                      asyncSettings="@Model.AsyncSettings" autoUpload="false"></ejs-uploader>
+        <button type="submit">Add New Blog</button>
+    </form>
+</div>
 
 
 

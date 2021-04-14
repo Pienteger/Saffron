@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using SaffronEngine.Blog;
 using Saffron.Services.BlogServices;
@@ -12,7 +11,6 @@ using System.Net.Http.Headers;
 using Saffron.Services.CoreServices;
 using Microsoft.AspNetCore.Hosting;
 using Syncfusion.EJ2.Inputs;
-using Syncfusion.EJ2.RichTextEditor;
 
 namespace Saffron.Pages.Blog
 {
@@ -40,7 +38,7 @@ namespace Saffron.Pages.Blog
             {
                 "Bold", "Italic", "Underline", "StrikeThrough",
                 "FontName", "FontSize", "FontColor", "BackgroundColor",
-                "LowerCase", "UpperCase", "|",
+                "LowerCase", "UpperCase","|",
                 "Formats", "Alignments", "OrderedList", "UnorderedList",
                 "Outdent", "Indent", "|",
                 "CreateLink", "Image", "CreateTable", "|", "ClearFormat", "Print",
@@ -57,7 +55,6 @@ namespace Saffron.Pages.Blog
                 RemoveUrl = navigation.IoRemoveFileApi };
         }
 
-
         public async Task<IActionResult> OnPostAsync(BlogPost blog)
         {
             try
@@ -69,41 +66,6 @@ namespace Saffron.Pages.Blog
             {
                 ModelState.AddModelError(string.Empty, e.Message);
                 return Page();
-            }
-        }
-        [HttpPost]
-        public void SaveImage(IList<IFormFile> UploadFiles)
-        {
-            try
-            {
-                foreach (var file in UploadFiles)
-                {
-                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
-                    if (fileName != null)
-                    {
-                        var filename = fileName.Trim('"');
-                        filename = hostingEnv.WebRootPath + "\\Uploads" + $@"\{filename}";
-
-                        // Create a new directory, if it does not exists
-                        if (!Directory.Exists(hostingEnv.WebRootPath + "\\Uploads"))
-                        {
-                            Directory.CreateDirectory(hostingEnv.WebRootPath + "\\Uploads");
-                        }
-
-                        if (System.IO.File.Exists(filename)) continue;
-                        using (var fs = System.IO.File.Create(filename))
-                        {
-                            file.CopyTo(fs);
-                            fs.Flush();
-                        }
-                    }
-
-                    Response.StatusCode = 200;
-                }
-            }
-            catch (Exception)
-            {
-                Response.StatusCode = 204;
             }
         }
     }

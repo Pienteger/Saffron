@@ -26,5 +26,6 @@ function scrollFunction() {
     }
 }
 function goToTopFunction() {
-    window.scroll({ top: 0, behavior: "smooth" })
+    window.scroll({ top: 0, behavior: "smooth" });
 }
+

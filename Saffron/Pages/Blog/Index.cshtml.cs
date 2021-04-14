@@ -20,6 +20,7 @@ namespace Saffron.Pages.Blog
         }
         [BindProperty]
         public IEnumerable<BlogPost> BlogPosts { get; set; }
+
         public void OnGet(string startPage, string itemCount, string tag, string category)
         {
             int start, count;

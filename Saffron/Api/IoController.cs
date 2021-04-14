@@ -20,14 +20,13 @@ namespace Saffron.Api
     {
         private readonly PhysicalFileProvider operation;
         private readonly IWebHostEnvironment hostingEnv;
-        private readonly string basePath;
-        private readonly string root = "wwwroot\\Files";
+        private const string Root = "wwwroot\\Files";
         public IoController(IWebHostEnvironment hostingEnvironment)
         {
             hostingEnv = hostingEnvironment;
-            this.basePath = hostingEnvironment.ContentRootPath;
-            this.operation = new PhysicalFileProvider();
-            this.operation.RootFolder(basePath + "\\" + this.root);
+            var basePath = hostingEnvironment.ContentRootPath;
+            operation = new PhysicalFileProvider();
+            operation.RootFolder(basePath + "\\" + Root);
         }
         [Route("FileOperations")]
         public object FileOperations([FromBody] FileManagerDirectoryContent args)
@@ -40,7 +39,7 @@ namespace Saffron.Api
                     {
                         Error = new ErrorDetails { Code = "401", Message = "Restricted to modify the root folder." }
                     };
-                    return this.operation.ToCamelCase(response);
+                    return operation.ToCamelCase(response);
                 }
             }
 
