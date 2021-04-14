@@ -2,10 +2,6 @@
 
 An open-source high-performance blog engine intended to closely work with machine learning and easily customizable layout.
 
-## SVG Providers
-
-- [unDraw](https://undraw.co)
-
 ## Caution
 
 It's an under dev project.
@@ -25,3 +21,13 @@ If you think that all of your `npm` packages are up-to-date, head over to `Saffr
 ```
 
 **Note:** These commands need to be executed at least one time to run the application properly.
+
+## Licence and attributes
+
+### SVG Providers
+
+- [unDraw](https://undraw.co)
+
+### Icon
+- [Flaticon](www.flaticon.com)
+
