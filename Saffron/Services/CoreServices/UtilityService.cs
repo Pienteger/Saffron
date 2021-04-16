@@ -39,7 +39,6 @@ namespace Saffron.Services.CoreServices
         public string ApplicationTitleColor { get; set; } = "#da532c";
         public string ThemeColor { get; set; } = "#ffffff";
 
-
         #endregion
 
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "buildnpm": "npx webpack ./src/index.js --output-path ../wwwroot/js --output-filename npm.bundle.js",
-    "purge": "npx purgecss --css ../wwwroot/raw/*.css --content src/index.html ../Pages/**/*.cshtml -o ../wwwroot/css/"
+    "purge": "npx purgecss --css ../wwwroot/raw/**/*.css --content src/index.html ../Pages/**/*.cshtml -o ../wwwroot/css/"
   },
   "keywords": [],
   "author": "",

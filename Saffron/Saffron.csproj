@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.5" />
-    <PackageReference Include="AspNet.Security.OAuth.GitHub" Version="5.0.4" />
+    <PackageReference Include="AspNet.Security.OAuth.GitHub" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.5" />
@@ -93,8 +93,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="wwwroot\css\Components\" />
     <Folder Include="wwwroot\emojies\" />
     <Folder Include="wwwroot\Files\" />
+    <Folder Include="wwwroot\raw\Components\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Areas\Identity\Pages\Account\AccessDenied.cshtml" />

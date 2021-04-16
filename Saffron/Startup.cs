@@ -68,6 +68,7 @@ namespace Saffron
                 .FromFile(modelPath);
 
             services.AddSaffronServices();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Saffron.Services.BlogServices;
 using Saffron.Services.CoreServices;
 using Saffron.Services.CoreServices.Menu;
@@ -18,6 +19,7 @@ namespace Saffron.Services
             services.AddScoped<UtilityService>();
             services.AddSingleton<NavigationService>();
             services.AddScoped<IBlogService, BlogService>();
+
             return services;
         }
     }

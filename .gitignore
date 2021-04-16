@@ -34,6 +34,7 @@ bld/
 [Ll]ogs/
 node_modules/
 Migrations/
+LocalData/saffrondb.db
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

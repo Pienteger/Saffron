@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Saffron.Areas.Identity.Data;
 using SaffronEngine.Basic;
+using SaffronEngine.Basic.Settings;
 using SaffronEngine.Blog;
 
 namespace Saffron.DataContext
@@ -12,13 +13,15 @@ namespace Saffron.DataContext
             : base(options)
         {
         }
+        
         public DbSet<MenuItem> Menus { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<PostTag> PostTags{ get; set; }
         public DbSet<PostCategory> PostCategories  { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<BlogPost>().HasIndex(x => x.Title).IsUnique();
+            
+            builder.Entity<BlogPost>().HasIndex(x => x.Slug).IsUnique();
             base.OnModelCreating(builder);
         }
     }

@@ -1,4 +1,5 @@
-﻿:root {
+﻿@import url(Button.css);
+:root {
     font-size: 16px;
     font-family: "Open Sans";
     --text-primary: #b6b6b6;
@@ -249,3 +250,4 @@ body::-webkit-scrollbar-thumb {
 .solar #solarIcon {
     display: block;
 }
+

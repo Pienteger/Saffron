@@ -5,20 +5,25 @@
 @model AddBlogModel
 @{
     utilityService.HeaderJS = "https://cdn.syncfusion.com/ej2/dist/ej2.min.js";
-    utilityService.CustomCss = "https://cdn.syncfusion.com/ej2/material.css";
+    utilityService.CustomCss = "https://cdn.syncfusion.com/ej2/fabric.css";
+    utilityService.Title = "Add new post";
+    utilityService.SubTitle = string.Empty;
 }
 
 <div style="margin: 5rem; padding: 5rem;">
     <form asp-for="@Model.Blog" method="post">
         
-        <div>
-            <label asp-for="Blog.Title"></label>
-            <input type="text" asp-for="Blog.Title">
-        </div>
 
-        <hr/>
+            <label asp-for="Blog.Title"></label><br/>
+            <input type="text" asp-for="Blog.Title" style="border: none; line-break: auto; width: 100%;
+                                                           border-bottom: 1px solid gray; word-break: normal;
+                                                           font-size: 5rem; outline: none;background: transparent">
+
+
         <label asp-for="Blog.Body"></label>
-        <ejs-richtexteditor id="blogBodyEditor" showCharCount="true" ejs-for="Blog.Body">
+        <ejs-richtexteditor id="blogBodyEditor" showCharCount="true" 
+                            enableResize="false" undoRedoSteps="double.MaxValue"
+                            ejs-for="Blog.Body">
             <e-richtexteditor-toolbarsettings items="@Model.RichToolBar"/>
             <e-richtexteditor-filemanagersettings enable="true" ajaxSettings="@Model.AjaxSettings"/>
             <e-richtexteditor-insertimagesettings saveUrl="@navigationService.IoSaveFileApi"
