@@ -2,6 +2,18 @@
 
 An open-source high-performance blog engine intended to closely work with machine learning and easily customizable layout.
 
+[![GitHub issues](https://img.shields.io/github/issues/Pienteger/Saffron?style=flat-square)](https://github.com/Pienteger/HadithApi/issues) 
+[![GitHub forks](https://img.shields.io/github/forks/Pienteger/Saffron?style=flat-square)](https://github.com/Pienteger/HadithApi/network) 
+[![GitHub stars](https://img.shields.io/github/stars/Pienteger/Saffron?style=flat-square)](https://github.com/Pienteger/HadithApi/stargazers)
+
+![GitHub code size](https://img.shields.io/github/languages/code-size/Pienteger/Saffron?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/Pienteger/Saffron?style=flat-square)
+
+![GitHub top language](https://img.shields.io/github/languages/top/Pienteger/Saffron?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/Pienteger/Saffron?style=flat-square)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Pienteger/Saffron?style=flat-square)
+
 ## Caution
 
 It's an under dev project.
