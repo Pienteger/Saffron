@@ -1,24 +1,53 @@
-@import url(Button.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@font-face {
+    font-family: "Noto Sans Bold";
+    src: url("./noto.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Noto Sans Regular";
+    src: url("./noto-re.ttf") format("truetype");
+}
+
+
+
 :root {
     font-size: 16px;
     font-family: "Open Sans";
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
+    --first-color: #27133D;
+    --second-color: #A424FF;
+    --third-color: #8809E3;
+    --fourth-color: #859600;
+    --fifth-color: #7C3FC2;
+    --text-primary: #161514;
+    --text-secondary: #292827;
 }
 
+@import url("Components/Header.css");
+@import url("Components/Footer.css");
 
 body {
-    margin: 0px;
+    margin: 0;
+    font-family: 'Segoe UI','Open Sans','Noto Sans Bengali','Roboto', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+    scroll-behavior: smooth;
+    margin: 0;
+    background-color: #fff;
 }
 
-    body::before {
-        background-color: #faf9f8;
+    body:before {
+        -ms-background-size: cover;
         background-size: cover;
+        -ms-background-attachment: fixed;
         background-attachment: fixed;
         content: "";
+        -webkit-will-change: transform;
+        -moz-will-change: transform;
+        -o-will-change: transform;
         will-change: transform;
         z-index: -1;
         left: 0;
@@ -27,6 +56,7 @@ body {
         top: 0;
         position: fixed;
     }
+
 
 #go-to-top {
     position: fixed;
@@ -43,197 +73,209 @@ main {
     padding: 1rem;
 }
 
-body::-webkit-scrollbar {
-    width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-    background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #6649b8;
-}
-
-.navbar {
-    position: fixed;
-    background-color: var(--bg-primary);
-    transition: width 600ms ease;
-    overflow: auto;
-}
-
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-}
-
-.nav-item {
-    width: 100%;
-}
-
-    .nav-item:last-child {
-        margin-top: auto;
-    }
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: var(--text-primary);
+a {
+    font-family: 'Open Sans', 'Noto Sans Bengali', sans-serif;
+    font-style: normal;
     text-decoration: none;
-    filter: grayscale(100%) opacity(0.7);
-    transition: var(--transition-speed);
+    color: var(--fourth-color);
 }
 
-    .nav-link:hover {
-        filter: grayscale(0%) opacity(1);
-        background: var(--bg-secondary);
-        color: var(--text-secondary);
-    }
-
-.link-text {
-    display: none;
-    margin-left: 1rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
 }
 
-.nav-link svg {
-    width: 2rem;
-    min-width: 2rem;
-    margin: 0 1.5rem;
-}
-
-.fa-primary {
-    color: #ff7eee;
-}
-
-.fa-secondary {
-    color: #df49a6;
-}
-
-.fa-primary,
-.fa-secondary {
-    transition: var(--transition-speed);
-}
-
-.logo {
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    text-align: center;
+p {
     color: var(--text-secondary);
-    background: var(--bg-secondary);
-    font-size: 1.5rem;
-    letter-spacing: 0.3ch;
+}
+
+img {
+    height: 100%;
     width: 100%;
 }
 
-    .logo svg {
-        transform: rotate(0deg);
-        transition: var(--transition-speed);
-    }
+.scrollbar-custom::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: transparent;
+}
 
-.logo-text {
-    display: inline;
+.scrollbar-custom::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: transparent;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--fifth-color);
+    display: auto;
+}
+
+
+/*== Header ==*/
+
+.top-bar {
+    height: 10px;
+    width: 100%;
+    top: 0;
     position: absolute;
-    left: -999px;
-    transition: var(--transition-speed);
+    background-color: var(--first-color);
 }
 
-.navbar:hover .logo svg {
-    transform: rotate(-180deg);
+.header {
+    background-color: #F5F3F1;
+    color: #000;
+    position: absolute;
+    top: 10px;
+    height: 48px;
+    width: 100%;
+    width: -moz-available;
+    padding: 0 5vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
 }
 
-/* Small screens */
-@media only screen and (max-width: 600px) {
-    .navbar {
-        top: 0;
-        width: 100vw;
-        height: 5rem;
+    .header > a > img {
+        max-height: 100%;
+        height: 40px;
+        width: 40px;
+        align-content: center;
+        align-self: center;
     }
 
+    .header > a {
+        color: #1b1a19;
+        text-decoration: none !important;
+    }
 
-    .logo {
+    .header .divider {
+        height: 30px;
+        width: 3px;
+        background-color: black;
+        align-self: center;
+        margin: 0 1vw;
+    }
+
+    .header .links {
+        color: #1b1a19;
+        align-self: center;
+    }
+
+header .links > a {
+    color: #1b1a19;
+    font-weight: 600;
+    font-size: large;
+    margin: 0 5px;
+}
+
+.header > .account {
+    color: #1b1a19;
+    align-self: center;
+    margin-left: auto;
+}
+
+header .account > a {
+    color: #1b1a19;
+    font-weight: 600;
+    font-size: large;
+    margin: 0 5px;
+}
+
+
+/*== Footer ==*/
+
+.bottom-bar {
+    height: 10px;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    background-color: var(--first-color);
+}
+
+.footer {
+    bottom: 10px;
+    width: 100%;
+    width: -moz-available;
+    box-sizing: border-box;
+    background-color: #1b1a19;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 50px;
+    padding-top: 15px;
+}
+
+    .footer > p {
+        color: #edebe9;
+    }
+
+    .footer .links {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+footer .links > a {
+    margin: 0 5px;
+    color: #8764b8;
+}
+
+
+/*== Main ==*/
+.main {
+    top: 58px;
+    position: relative;
+    padding: 15px 10px;
+    overflow: hidden;
+    height: 100%;
+    height: fit-content;
+    display: inline-block;
+    scroll-behavior: auto;
+    padding: 3vh 10vw;
+    min-height: 71vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .img_center {
+        width: 100%;
+    }
+
+    .header {
+        flex-flow: column;
+        height: auto;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        position: relative;
+    }
+
+    .main {
+        top: auto;
+        position: relative;
+        padding: 0 6vw;
+    }
+
+    .links {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .account {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header .divider {
         display: none;
     }
-
-    .navbar-nav {
-        flex-direction: row;
-    }
-
-    .nav-link {
-        justify-content: center;
-    }
-
-    main {
-        margin: 0;
-        margin-top: 5rem;
-    }
 }
-
-/* Large screens */
-@media only screen and (min-width: 600px) {
-    .navbar {
-        top: 0;
-        width: 5rem;
-        height: 100vh;
-    }
-
-        .navbar:hover {
-            width: 16rem;
-        }
-
-            .navbar:hover .link-text {
-                display: inline;
-            }
-
-            .navbar:hover .logo svg {
-                margin-left: 11rem;
-            }
-
-            .navbar:hover .logo-text {
-                left: 0px;
-            }
-}
-
-.dark {
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
-}
-
-.light {
-    --text-primary: #1f1f1f;
-    --text-secondary: #000000;
-    --bg-primary: #ffffff;
-    --bg-secondary: #e4e4e4;
-}
-
-.solar {
-    --text-primary: #576e75;
-    --text-secondary: #35535c;
-    --bg-primary: #fdf6e3;
-    --bg-secondary: #f5e5b8;
-}
-
-.theme-icon {
-    display: none;
-}
-
-.dark #darkIcon {
-    display: block;
-}
-
-.light #lightIcon {
-    display: block;
-}
-
-.solar #solarIcon {
-    display: block;
-}
-

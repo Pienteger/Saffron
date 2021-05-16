@@ -100,6 +100,9 @@ namespace Saffron
                 endpoints.MapControllerRoute(
                     name: "areas",
                     pattern: "{area:exists}/_Host");
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 

@@ -17,6 +17,7 @@ namespace SaffronEngine.Basic
     }
     public enum MenuType
     {
-
+        HeaderMenu = 0,
+        FooterMenu = 1
     }
 }

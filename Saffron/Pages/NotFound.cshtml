@@ -19,4 +19,40 @@
         </p>
     </div>
 </div>
+<div class="ms-Grid" dir="ltr">
+    <div class="ms-Grid-row">
+        <h1>404</h1>
+        <h2>আপনি যে পেজটি খুঁজছেন তা পাওয়া যায় নি।</h2>
+        <h4>আপনি <a href="@utilityService.SiteUri">হোমে</a> ফিরে যেতে পারেন। তার আগে হাদিস টি পড়ে নিন।</h4>
+        <div x-data="hadith" x-init="getHadith()">
+            <p x-text="body"></p>
+            <p>বর্ণনাকারীঃ <span x-text="speaker"></span></p>
+            <p>বইঃ <span x-text="book"></span></p>
+            <p>মানঃ <span x-text="condition"></span></p>
+        </div>
+    </div>
+</div>
 
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <script>
+        var hadith = {
+            speaker: "",
+            book: "",
+            body: "",
+            condition: "",
+            getHadith() {
+                fetch("https://hadithapi.azurewebsites.net/bn/single")
+                    .then(res => res.json())
+                    .then(data => {
+                        this.speaker = data.speaker
+                        this.book = data.book
+                        this.body = data.body
+                        this.condition = data.condition
+                    })
+            }
+        }
+    </script>
+}
