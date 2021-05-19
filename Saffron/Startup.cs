@@ -53,8 +53,7 @@ namespace Saffron
             #region Database
 
             services.AddDbContext<SaffronContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("SQLiteConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("SaffronAzureConnectionString")));
             services.AddDefaultIdentity<SaffronUser>(options =>
                     options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<SaffronContext>();
